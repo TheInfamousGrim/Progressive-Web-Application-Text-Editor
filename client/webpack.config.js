@@ -2,9 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
-
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = () => ({
     mode: 'development',
@@ -32,8 +30,6 @@ module.exports = () => ({
         }),
         // Creates the manifest.json file
         new WebpackPwaManifest({
-            fingerprints: false,
-            inject: true,
             name: 'Just Another Text Editor',
             short_name: 'JATE',
             description: 'A text editor that can be run in the browser as well as offline',
@@ -48,6 +44,14 @@ module.exports = () => ({
                     destination: path.join('assets', 'icons'),
                 },
             ],
+        }),
+        // Generates the favicons for the site
+        new FaviconsWebpackPlugin({
+            logo: './logo.png',
+            cache: true,
+            outputPath: 'assets/favicons',
+            prefix: 'assets/favicons/',
+            inject: true,
         }),
     ],
 
