@@ -2,6 +2,7 @@ import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database';
 import '../css/style.css';
+import BrandImg from '../images/icon_96x96.png';
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
@@ -16,6 +17,10 @@ const loadSpinner = () => {
   `;
     main.appendChild(spinner);
 };
+
+// Inject logo
+const navbarBrand = document.querySelector('.navbar-brand__img');
+navbarBrand.src = BrandImg;
 
 const editor = new Editor();
 

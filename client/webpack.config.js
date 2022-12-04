@@ -16,6 +16,7 @@ module.exports = () => ({
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: '[name][ext]',
     },
     plugins: [
         // Generates HTML file and injects our bundles
@@ -61,6 +62,11 @@ module.exports = () => ({
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
+            },
+            // Managing output of assets
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
             {
                 test: /\.m?js$/,
