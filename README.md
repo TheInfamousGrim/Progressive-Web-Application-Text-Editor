@@ -25,6 +25,8 @@ A text editor that runs in the browser. The app will be a single-page applicatio
 
 I had to go in and implement the features of a progressive web application for a text editor application. This involved editing and setting up the webpack config, installing dependencies that will help with the build of the app and PWA and more.
 
+[Link to application](https://pacific-shore-70716.herokuapp.com/)
+
 ### User Story 👤
 
 AS A developer
@@ -76,7 +78,7 @@ If you've followed these steps correctly then the application should be good to 
 
 ## Usage
 
-Link to live application: `Link goes here`
+Link to live application: [Click here](https://pacific-shore-70716.herokuapp.com/)
 
 Please follow these steps to use the application locally
 
